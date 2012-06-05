@@ -1,0 +1,166 @@
+!!!
+%html{:lang => "en"}
+	%head
+		%meta{:charset => "utf-8"}/
+		%title Formulaire | Bonjour gem
+		%meta{:content => "{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}. {Description}", :name => "description"}/
+		/ Le HTML5 shim, for IE6-8 support of HTML elements
+		/[if lt IE 9]
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		/ RSS
+		%link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"}/
+		/ Google Webfonts
+		%link{:href => "http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic", :rel => "stylesheet", :type => "text/css"}/
+		%link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans+Mono", :rel => "stylesheet", :type => "text/css"}/
+		/ Feuille de style font
+		%link{:href => "http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/css/font.css", :rel => "stylesheet"}/
+		/ Le styles
+		%link{:href => "http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/css/bootstrap.css", :rel => "stylesheet"}/
+		/ Le fav icon
+		%link{:href => "http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/favicon.ico", :rel => "shortcut icon"}/
+	%body{:onload => "prettyPrint()"}
+		/ Precharger font
+		%p.hidden.novecento-normal Novecento Normal
+		%p.hidden.novecento-demibold Novecento Demibold
+		%p.hidden.novecento-bold Novecento Bold
+		.container-fluid
+			%header.row-fluid
+				.span8
+					.left-col
+					/ /.left-col
+					.right-col
+						%a{:class => "logo #{today_class}", :href => "http://www.bonjourgem.com"}
+						%h3
+							Un jour,
+							%span une gem
+					/ /.right-col
+				/ /.span8
+			/ /header.row-fluid
+			.row-fluid
+				.span8
+					.left-col
+						%p.date= Time.now.strftime("%d/%m/%Y")
+						%ul.pager
+							%li
+								%span#prev.btn-disabled Préc
+							%li
+								%span#next.btn-disabled Suiv
+					/ /.left-col
+					= yield
+					.clear
+					.left-col
+						%ul.pager
+							%li
+								%span#prev.btn-disabled Préc
+							%li
+								%span#next.btn-disabled Suiv
+					/ /.left-col
+					.right-col
+						%ul.social-buttons.cf
+							/ <li><a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={Permalink}" class="socialite googleplus" data-size="medium" data-href="{Permalink}" rel="nofollow" target="_blank"><span>Partager sur Google+</span></a></li>
+							%li
+								%a.socialite.facebook{"data-href" => "{Permalink}", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "60", :href => "http://www.facebook.com/sharer.php?u={Permalink}", :rel => "nofollow", :target => "_blank"}
+									%span Partager sur Facebook
+							%li
+								%a.twitter-share-button{"data-hashtags" => "BonjourGem", "data-lang" => "en", "data-text" => "{block:Title}{Title}{/block:Title}", "data-via" => "davidmaylis", :href => "https://twitter.com/share"} Partager sur Twitter
+					/ /.right-col
+					.clear
+				/ /.span8
+				.span4
+					.sidebar-nav
+						%ul.nav.nav-list
+							%li.nav-header Catégories
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/authentification"} Authentification
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/autorisation"} Autorisation
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/base_de_données"} Base de Données
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/communication"} Communication
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/css"} CSS
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/déploiement_et_hébergement"} Déploiement et hébergement
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/gestion_de_contenu"} Gestion de contenu
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/html"} HTML
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/javascript"} JavaScript
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/maintenance_et_monitoring"} Maintenance et monitoring
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/outil_de_développement"} Outil de développement
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/outil_pour_la_documentation"} Outil pour la documentation
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/parseur"} Parseur
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/plugin_active_record"} Plugin Active Record
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/plugin_rails"} Plugin Rails
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/service_et_interaction"} Service et interaction
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/temps_et_espace"} Temps et espace
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/test"} Test
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/upload_de_fichier"} Upload de fichier
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/utilitaire"} Utilitaire
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/web_app"} Web app
+							%li
+								%a{:href => "http://www.bonjourgem.com/tagged/wtf"} WTF
+						.separator
+						%ul.nav.nav-list
+							%li.nav-header.follow-heading Nous suivre
+							%li
+								%a{:href => "https://twitter.com/#!/davidmaylis", :onclick => "window.open(this.href);return false;"} David & Maylis sur Twitter
+					/ /.sidebar-nav
+				/ /.span4
+			/ /.row-fluid
+			%footer.row-fluid
+				.span8
+					.left-col
+					/ /.left-col
+					.right-col
+						%span
+							%a{:href => "https://www.tumblr.com", :onclick => "window.open(this.href);return false;"} Tumblr
+							Bonjour gem par
+							%a{:href => "http://www.webdesigner-developpeur-marseille.com", :onclick => "window.open(this.href);return false;"} David & Maylis
+							construit avec le fabuleux
+							%a{:href => "http://twitter.github.com/bootstrap", :onclick => "window.open(this.href);return false;"} Twitter Bootstrap
+					/ /.right-col
+				/ /.span8
+			/ /footer.row-fluid
+		/ /.container-fluid
+		/ Le javascript
+		/ Placed at the end of the document so the pages load faster
+		/ Jquery
+		%script{:src => "http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/js/jquery-1.7.1.min.js"}
+		/ Prettify
+		%script{:src => "http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/js/prettify.js"}
+		/ Socialite
+		%script{:src => "http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/js/socialite-1.0.js"}
+		:javascript
+			$(document).ready(function()
+				{
+					Socialite.load($('.social-buttons'));
+				}
+			);
+		:javascript
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		/ Google Analytics
+		:javascript
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-22833339-4']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
