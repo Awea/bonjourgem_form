@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Formulaire | Bonjour gem</title>
+			<meta name="description" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}. {Description}" />
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- RSS -->
+		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+		<!-- Google Webfonts -->
+		<link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+		<!-- Feuille de style font -->
+		<link href="http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/css/font.css" rel="stylesheet" />
+		<!-- Le styles -->
+		<link href="http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/css/bootstrap.css" rel="stylesheet" />
+
+		<!-- Le fav icon -->
+		<link rel="shortcut icon" href="http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/favicon.ico" />
+	</head>
+	<body onload="prettyPrint()">
+
+		<!-- Precharger font -->
+		<p class="hidden novecento-normal">Novecento Normal</p>
+		<p class="hidden novecento-demibold">Novecento Demibold</p>
+		<p class="hidden novecento-bold">Novecento Bold</p>
+
+		<div class="container-fluid">
+
+			<header class="row-fluid"> 
+
+				<div class="span8">
+
+					<div class="left-col"></div><!--/.left-col-->
+
+					<div class="right-col">
+						<a class="logo <%= today_class %>" href="http://www.bonjourgem.com"></a>
+						<h3>Un jour, <span>une gem</span></h3>	
+					</div><!--/.right-col-->
+
+				</div><!--/.span8-->
+
+			</header><!--/header.row-fluid-->
+
+			<div class="row-fluid">      
+
+				<div class="span8">
+
+					<div class="left-col">
+						<p class="date"><%= Time.now.strftime("%d/%m/%Y") %></p>
+						<ul class="pager">
+							<li><span class="btn-disabled" id="prev">Pr&eacute;c</span></li>
+							<li><span class="btn-disabled" id="next">Suiv</span></li>  	    							
+						</ul>
+					</div><!--/.left-col-->
+      	
+					<%= yield %>      	
+
+					<div class="clear"></div>
+
+					<div class="left-col">    				
+						<ul class="pager">
+							<li><span class="btn-disabled" id="prev">Pr&eacute;c</span></li>
+							<li><span class="btn-disabled" id="next">Suiv</span></li>  	    							
+						</ul>
+					</div><!--/.left-col-->
+
+					<div class="right-col">
+							<ul class="social-buttons cf">
+								<!-- <li><a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={Permalink}" class="socialite googleplus" data-size="medium" data-href="{Permalink}" rel="nofollow" target="_blank"><span>Partager sur Google+</span></a></li> -->
+								<li><a href="http://www.facebook.com/sharer.php?u={Permalink}" class="socialite facebook" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span>Partager sur Facebook</span></a></li>
+								<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="davidmaylis" data-lang="en" data-hashtags="BonjourGem" data-text="{block:Title}{Title}{/block:Title}">Partager sur Twitter</a></li>
+							</ul>   	
+					</div><!--/.right-col-->
+
+					<div class="clear"></div>
+
+				</div><!--/.span8-->
+
+				<div class="span4">
+
+					<div class="sidebar-nav">
+						<ul class="nav nav-list">
+							<li class="nav-header">Cat&eacute;gories</li>
+							<li><a href="http://www.bonjourgem.com/tagged/authentification">Authentification</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/autorisation">Autorisation</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/base_de_données">Base de Données</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/communication">Communication</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/css">CSS</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/déploiement_et_hébergement">Déploiement et hébergement</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/gestion_de_contenu">Gestion de contenu</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/html">HTML</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/javascript">JavaScript</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/maintenance_et_monitoring">Maintenance et monitoring</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/outil_de_développement">Outil de développement</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/outil_pour_la_documentation">Outil pour la documentation</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/parseur">Parseur</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/plugin_active_record">Plugin Active Record</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/plugin_rails">Plugin Rails</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/service_et_interaction">Service et interaction</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/temps_et_espace">Temps et espace</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/test">Test</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/upload_de_fichier">Upload de fichier</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/utilitaire">Utilitaire</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/web_app">Web app</a></li>
+							<li><a href="http://www.bonjourgem.com/tagged/wtf">WTF</a></li>
+						</ul> 
+						<div class="separator"></div>          
+						<ul class="nav nav-list">
+							<li class="nav-header follow-heading">Nous suivre</li>
+							<li><a href="https://twitter.com/#!/davidmaylis" onclick="window.open(this.href);return false;">David & Maylis sur Twitter</a></li>
+						</ul>            
+					</div><!--/.sidebar-nav -->
+
+				</div><!--/.span4-->
+
+			</div><!--/.row-fluid-->
+
+			<footer class="row-fluid"> 
+
+				<div class="span8">
+
+					<div class="left-col"></div><!--/.left-col-->
+
+					<div class="right-col">        		
+						<span>
+							<a href="https://www.tumblr.com" onclick="window.open(this.href);return false;">Tumblr</a> Bonjour gem par <a href="http://www.webdesigner-developpeur-marseille.com" onclick="window.open(this.href);return false;">David & Maylis</a> construit avec le fabuleux <a href="http://twitter.github.com/bootstrap" onclick="window.open(this.href);return false;">Twitter Bootstrap</a>   
+						</span> 			
+					</div><!--/.right-col-->
+
+				</div><!--/.span8-->
+
+			</footer><!--/footer.row-fluid-->
+
+		</div><!--/.container-fluid-->
+
+		<!-- Le javascript -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<!-- Jquery -->
+		<script src="http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/js/jquery-1.7.1.min.js"></script>
+		<!-- Prettify -->
+		<script src="http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/js/prettify.js"></script>
+		<!-- Socialite -->
+		<script src="http://www.webdesigner-developpeur-marseille.com/site/bonjour-gem/js/socialite-1.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+				{
+					Socialite.load($('.social-buttons'));
+				}
+			);
+		</script>
+		<script type="text/javascript">
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-22833339-4']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();    
+		</script>
+
+	</body>
+</html>
