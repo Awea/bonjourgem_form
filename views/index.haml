@@ -1,0 +1,31 @@
+.right-col
+  %h1
+    %a{:href => "#"} Soumettez nous vos gems
+  if @error
+  .alert.alert-error
+    %strong Il y a des erreurs !
+    Vérifiez que les champs requis sont corrects.
+  end
+  if @confirm
+    .alert.alert-success
+      %strong Gem transmise avec succès !
+      Merci pour votre contribution.
+  end
+	%form.form-horizontal{:action => "/", :method => "POST"}
+  %fieldset
+    .control-group
+      %label.control-label{:for => "input01"} Lien vers la gem *
+      .controls
+        %input#input01.input-xlarge{:name => "bonjour_gem[link]", :type => "text"}
+          %p.help-block exemple : https://github.com/sinatra/sinatra
+    .control-group
+      %label.control-label{:for => "input01"} Pseudo Twitter *
+      .controls
+        %input#input01.input-xlarge{:name => "bonjour_gem[twitter]", :type => "text"}
+          %p.help-block exemple : @davidmaylis
+    .control-group
+      %label.control-label{:for => "input01"} Un message
+      .controls
+        %textarea#textarea.input-xlarge{:name => "bonjour_gem[message]", :rows => "5"}
+    .form-actions
+      %button.btn.btn-primary{:type => "submit"} Envoyer la gem		   

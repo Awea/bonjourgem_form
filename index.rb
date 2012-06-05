@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'active_model'
 require 'pony'
+require 'haml'
 
 # model gem
 class BonjourGem
@@ -23,7 +24,7 @@ end
 # Routes
 get '/' do
 	@error, @confirm = false
-	erb :index
+	haml :index
 end
 
 post "/*" do
@@ -36,7 +37,7 @@ post "/*" do
 		@error   = true
 		@confirm = false
 	end
-	erb :index
+	haml :index
 end
 
 # Helpers 
